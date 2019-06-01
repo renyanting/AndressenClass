@@ -3,7 +3,7 @@
 
 2019-06-01
 
-注册GitHub账户
+注册GitHub账户:今天要注册！
 
 Git教程https://www.liaoxuefeng.com/wiki/896043488029600
 分布式版本控制系统 :Linus的Git, BitKeeper, Mercurial,Bazaar 
