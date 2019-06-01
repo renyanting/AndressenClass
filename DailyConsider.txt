@@ -1,0 +1,10 @@
+2019-05-31
+检查楔形块和垫石横坡一天，未果，也向同事咨询，跟代码数遍，无果，想不出原因时该怎么办？ 
+
+2019-06-01
+
+注册GitHub账户
+
+Git教程https://www.liaoxuefeng.com/wiki/896043488029600
+分布式版本控制系统 :Linus的Git, BitKeeper, Mercurial,Bazaar 
+集中式版本控制系统：中央服务器  ，比如免费的SVN  CVS；收费的IBM的ClearCase;微软的VSS
