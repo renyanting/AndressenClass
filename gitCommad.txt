@@ -25,3 +25,8 @@ git本地仓库推送至github远程仓库
 -------git remote add origin    git@github.com:chuaaqiCSDN/mygit.git                    //远程提交
 -------git push origin master                      //远程推送
 -------git clone   git@github.com:chuaaqiCSDN/mygit.git    //克隆
+
+git与github关联后提交步骤：
+-------git add filename
+-------git commit -m ""
+-------git push origin master
