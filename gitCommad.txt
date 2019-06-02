@@ -1,0 +1,27 @@
+git使用
+-------在D盘新建一个英文名文件； 双击进入文件件；右键选择GIT BASH； 
+-------输入git config --global user.name "ryt"   git config --global user.email "ryt.com" 
+-------输入git init  //创建git仓库
+-------现在可以开始在你的仓库下书写任何东西了；
+
+
+git命令
+-------git add filename.filetype  //将仓库文件提交到版本库中的暂存区stage或index
+-------git commit -m ""           //将更改提交至版本库的分支master
+-------git status                 //查看分支master状态
+-------git diff                   //查看区别
+-------git log                    //提交记录 
+-------git reset --hard HEAD^     //回退至上一个版本
+-------git reset --hard 5746d3d   //回退至对应版本号的提交
+-------git reflog                 //查看命令历史（所有提交或回退）得到版本号
+-------git checkout -- filename   //撤销 未提交至暂存区时在工作区所做的修改  撤销没有git add前的修改；
+-------git reset HEAD filename    //撤销没有gitcommit前的修改； 已经git add但是没有git commit
+-------rm filename                //删除文件  从暂存区
+-------git rm filename            //删除文件  从工作区
+
+git本地仓库推送至github远程仓库
+-------注册github;在github上创建新的仓库repositories；
+-------ssh-keygen -t rsa -C "13654922203@163.com"  //生成秘钥
+-------git remote add origin    git@github.com:chuaaqiCSDN/mygit.git                    //远程提交
+-------git push origin master                      //远程推送
+-------git clone   git@github.com:chuaaqiCSDN/mygit.git    //克隆
