@@ -35,18 +35,25 @@
             this.ToolStripMenuItem_rename = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1_Add = new System.Windows.Forms.Button();
+            this.button1_Delete = new System.Windows.Forms.Button();
+            this.button1_save = new System.Windows.Forms.Button();
+            this.button1_export = new System.Windows.Forms.Button();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // treeViewXie
             // 
             this.treeViewXie.BackColor = System.Drawing.SystemColors.Window;
-            this.treeViewXie.Location = new System.Drawing.Point(27, 12);
+            this.treeViewXie.Location = new System.Drawing.Point(27, 27);
             this.treeViewXie.Name = "treeViewXie";
             this.treeViewXie.ShowNodeToolTips = true;
-            this.treeViewXie.Size = new System.Drawing.Size(213, 373);
+            this.treeViewXie.Size = new System.Drawing.Size(213, 358);
             this.treeViewXie.TabIndex = 0;
             this.treeViewXie.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewXie_AfterLabelEdit);
+            this.treeViewXie.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewXie_NodeMouseClick);
             // 
             // contextMenuStrip2
             // 
@@ -87,15 +94,71 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "高一年级2019年好学班春季班";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(275, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(458, 326);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // button1_Add
+            // 
+            this.button1_Add.Location = new System.Drawing.Point(308, 362);
+            this.button1_Add.Name = "button1_Add";
+            this.button1_Add.Size = new System.Drawing.Size(75, 23);
+            this.button1_Add.TabIndex = 4;
+            this.button1_Add.Text = "增加列";
+            this.button1_Add.UseVisualStyleBackColor = true;
+            this.button1_Add.Click += new System.EventHandler(this.button1_Add_Click);
+            // 
+            // button1_Delete
+            // 
+            this.button1_Delete.Location = new System.Drawing.Point(423, 362);
+            this.button1_Delete.Name = "button1_Delete";
+            this.button1_Delete.Size = new System.Drawing.Size(75, 23);
+            this.button1_Delete.TabIndex = 5;
+            this.button1_Delete.Text = "删除列";
+            this.button1_Delete.UseVisualStyleBackColor = true;
+            this.button1_Delete.Click += new System.EventHandler(this.button1_Delete_Click);
+            // 
+            // button1_save
+            // 
+            this.button1_save.Location = new System.Drawing.Point(536, 362);
+            this.button1_save.Name = "button1_save";
+            this.button1_save.Size = new System.Drawing.Size(75, 23);
+            this.button1_save.TabIndex = 6;
+            this.button1_save.Text = "保存";
+            this.button1_save.UseVisualStyleBackColor = true;
+            this.button1_save.Click += new System.EventHandler(this.button1_save_Click);
+            // 
+            // button1_export
+            // 
+            this.button1_export.Location = new System.Drawing.Point(649, 362);
+            this.button1_export.Name = "button1_export";
+            this.button1_export.Size = new System.Drawing.Size(75, 23);
+            this.button1_export.TabIndex = 7;
+            this.button1_export.Text = "导出";
+            this.button1_export.UseVisualStyleBackColor = true;
+            this.button1_export.Click += new System.EventHandler(this.button1_export_Click);
+            // 
             // FORMXIE
             // 
             this.ClientSize = new System.Drawing.Size(760, 397);
+            this.Controls.Add(this.button1_export);
+            this.Controls.Add(this.button1_save);
+            this.Controls.Add(this.button1_Delete);
+            this.Controls.Add(this.button1_Add);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.treeViewXie);
             this.Name = "FORMXIE";
             this.Text = "xiechao";
             this.Load += new System.EventHandler(this.FORMXIE_Load);
+            this.Resize += new System.EventHandler(this.FORMXIE_Resize);
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +171,11 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_rename;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_delete;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1_Add;
+        private System.Windows.Forms.Button button1_Delete;
+        private System.Windows.Forms.Button button1_save;
+        private System.Windows.Forms.Button button1_export;
     }
 }
 

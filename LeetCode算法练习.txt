@@ -1,11 +1,11 @@
 /*******2019-6-4/2019-6-6********/
-/*******
+/**********************************************************************************************************
 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 给定 nums = [2, 7, 11, 15], target = 9
 因为 nums[0] + nums[1] = 2 + 7 = 9
 所以返回 [0, 1]
-********/
+***********************************************************************************************************/
 class Solution 
 {
 public:
@@ -35,7 +35,115 @@ public:
    }  
 }; 
 
+/*******************************************************************************************************************
+/*******2019-6-4/2019-7-6********/
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
+示例 1:
+
+输入: "abcabcbb"
+输出: 3 
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+示例 2:
+
+输入: "bbbbb"
+输出: 1
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+示例 3:
+
+输入: "pwwkew"
+输出: 3
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters
+********888*********************************************************************************************************/
+/*  总是用后面一位字符与前面的字符数组每个元素比较，
+如果前面数组不存在该字符，则将该字符加入数组，
+如果前面数组已存在该字符，则需要判断，
+                                    如果该字符前面字数数组的最后一位相同，则下次循环的起始位置读从该字符位置开始；
+									如果该字符前面字数数组的最后一位不相同，则下次循环的起始位置从与数组相同位置的后一位开始
+注意： 空字符是""长度为0;  而空格符长度是1；
+总结：知识点薄弱；不知道c++字符串的用法；
+      逻辑能力差，想好的思路不会快速用代码表达
+	  算法考虑不全面，未包括所有情况
+*/
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s)
+    {        
+      
+        //char a[s.length()];
+        //strncpy(a, s.c_str(),s.length() );
+        
+        vector<int> len;      
+        int i = 0;       
+        while (i<s.length()-1)
+        {              
+            vector<char> vstr;
+            vstr.push_back( a[i]);
+            int cnt = i+1;
+            if(cnt ==s.length() )
+                break;
+            int flag = 0;
+            do
+            {
+                for (int j = 0; j<vstr.size(); j++)
+                {
+                    if(a[j+i]!= a[cnt])
+                    {                    
+                        flag = 0;
+                    }   
+                    else
+                    {
+                         flag = 1;
+						  if(cnt - j - i ==1)
+                              cnt += 0;
+                          else 
+                              cnt = j+i +1;
+                         break;
+                    }
+                       
+                    
+                 }
+                 if(flag == 0)
+                 {
+                     vstr.push_back(a[cnt]);
+                     cnt++;
+                 }                                   
+            }while (flag == 0 && cnt<s.length());
+            len.push_back(vstr.size());
+            i = cnt;            
+        }
+        
+        
+        return *max_element(len.begin(), len.end());
+       }
+        
+    }
+	
+/**********其他作者答案；***********/
+	class Solution {
+    public:
+    int lengthOfLongestSubstring(string s) {
+        int ans = 0;
+        for(int i = 0; s[i] != '\0'; ++ i){
+            unordered_set<char> str;
+            int len = 0;
+            for(int j = i; s[j] != '\0'; ++ j){
+                if(str.count(s[j])) break;
+                str.insert(s[j]);
+                ++ len;
+            }
+            len > ans? ans = len : ans = ans;
+        }
+        return ans;
+    }
+};
+
+};
 
 
 

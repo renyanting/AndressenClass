@@ -31,3 +31,11 @@ F:\练习\C#\ANDRESSEN04\ANDRESSEN\obj\Debug\ANDRESSEN.Properties.Resources.reso
 F:\练习\C#\ANDRESSEN04\ANDRESSEN\obj\Debug\ANDRESSEN.csproj.GenerateResource.Cache
 F:\练习\C#\ANDRESSEN04\ANDRESSEN\obj\Debug\ANDRESSEN.exe
 F:\练习\C#\ANDRESSEN04\ANDRESSEN\obj\Debug\ANDRESSEN.pdb
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\bin\Debug\ANDRESSEN.exe.config
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\bin\Debug\ANDRESSEN.exe
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\bin\Debug\ANDRESSEN.pdb
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\obj\Debug\ANDRESSEN.FORMXIE.resources
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\obj\Debug\ANDRESSEN.Properties.Resources.resources
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\obj\Debug\ANDRESSEN.csproj.GenerateResource.Cache
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\obj\Debug\ANDRESSEN.exe
+D:\WorkSpace\AndressenClass\ANDRESSEN\ANDRESSEN\obj\Debug\ANDRESSEN.pdb

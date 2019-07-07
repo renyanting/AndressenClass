@@ -37,10 +37,17 @@ namespace ANDRESSEN
                     XmlElement xe2 = (XmlElement)node2;
                     //得到班级类型
                     stuInfo.ClassType = xe2.GetAttribute("name").ToString();
-                    //得到学生信息
+                    //得到学生人数
                     foreach (XmlNode node3 in xe2.ChildNodes)
                     {
-                        stuInfo.StudentsInfo.Add(node3.InnerText);
+                        XmlElement xe3 = (XmlElement)node3;
+                        Person person = new Person();
+                        foreach (XmlNode node4 in xe3.ChildNodes)
+                        {
+                            person.StuInfo.Add(node4.InnerText);
+                            
+                        }
+                        stuInfo.Students.Add(person);
                     }
 
                     studentsInfo.Add(stuInfo);
@@ -69,7 +76,6 @@ namespace ANDRESSEN
             myXmlTextWriter.WriteStartElement("grade");
             myXmlTextWriter.WriteAttributeString("name", grade);
      
-         
                 foreach (TreeNode cn1 in nodes.Nodes)
                 {
                     myXmlTextWriter.WriteStartElement("class");
@@ -79,11 +85,28 @@ namespace ANDRESSEN
                     {
                         myXmlTextWriter.WriteStartElement("type");
                         myXmlTextWriter.WriteAttributeString("name", cn2.Text);
-                        myXmlTextWriter.WriteElementString("sdname", "张三");
-                        myXmlTextWriter.WriteElementString("sdgender", "男");
-                        myXmlTextWriter.WriteElementString("sdphone", "111");
-                        myXmlTextWriter.WriteElementString("sdschool", "高新一中");
+
+                        myXmlTextWriter.WriteStartElement("student");
+                        myXmlTextWriter.WriteElementString("name", "张三");
+                        myXmlTextWriter.WriteElementString("gender", "男");
+                        myXmlTextWriter.WriteElementString("phonenum", "111");
+                        myXmlTextWriter.WriteElementString("school", "高新一中");
+                        myXmlTextWriter.WriteElementString("core1", "22");
+                        myXmlTextWriter.WriteElementString("core2", "99");
+                        myXmlTextWriter.WriteElementString("core3", "55");
                         myXmlTextWriter.WriteEndElement();
+
+                        myXmlTextWriter.WriteStartElement("student");
+                        myXmlTextWriter.WriteElementString("name", "李四");
+                        myXmlTextWriter.WriteElementString("gender", "男");
+                        myXmlTextWriter.WriteElementString("phonenum", "101");
+                        myXmlTextWriter.WriteElementString("school", "高新一中");
+                        myXmlTextWriter.WriteElementString("core1", "22");
+                        myXmlTextWriter.WriteElementString("core2", "99");
+                        myXmlTextWriter.WriteElementString("core3", "55");
+                        myXmlTextWriter.WriteEndElement();
+
+                    myXmlTextWriter.WriteEndElement();
                     }
                     
 
@@ -126,5 +149,41 @@ namespace ANDRESSEN
             xmldoc.Save(fileName);
 
         }
+
+        public bool InsertXML(string grade, string classname,  string typeName, string nodeName)
+        {
+            XmlDocument xmldoc = new XmlDocument();
+            string fileName = "";
+            if (grade == "高一年级")
+            {
+                fileName = "SENIONE.xml";
+            }
+            else if (grade == "高二年级")
+            {
+                fileName = "SENITWO.xml";
+            }
+            else if (grade == "高三年级")
+            {
+                fileName = "SENITHREE.xml";
+            }
+
+            xmldoc.Load(@fileName);
+
+            XmlNode rootNode = xmldoc.SelectSingleNode("grade");
+
+            XmlNode node1 = xmldoc.DocumentElement.SelectSingleNode("grade/class[@name = 'classname']/type");
+
+            XmlNode node2 = node1.Clone();
+         
+            xmldoc.InsertAfter(node1, node2);
+
+            xmldoc.Save(fileName);
+            return true;
+        }
     }
+
+
+
+
+
 }
